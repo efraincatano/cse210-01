@@ -83,7 +83,7 @@ def move():
     
 
 '''
-How the players are switched
+How the players are switched after one of then make a move
 '''
 def next(now_playing):
     if now_playing == "o":
