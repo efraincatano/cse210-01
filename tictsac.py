@@ -4,6 +4,9 @@ def main ():
     table()
     move()
 
+'''
+Displaying the game interface
+'''
 def table():
     print(numbers[0], "|", numbers[1], "|", numbers[2])
     print("----------")
@@ -12,11 +15,16 @@ def table():
     print(numbers[6], "|", numbers[7], "|", numbers[8])
     print("")
 
+'''
+While score is false the program will get inputs and put them in the place selected
+'''
 def move():
     player = next("o")
     while not(score(numbers)):
        moving = int(input(f"{player} turn to choose a square (1-9): "))
-
+       ''' 
+       Cheking every place of the board and replacing with the player's name
+       '''
        for row in numbers:
            if moving == numbers[0]:
               numbers[0] = player
@@ -74,15 +82,18 @@ def move():
     table()
     
 
-
+'''
+How the players are switched after one of then make a move
+'''
 def next(now_playing):
     if now_playing == "o":
         return "x"
     elif now_playing == "x":
         return "o"
 
-
-
+'''
+We have every possible combine to be check with the list of numbers
+'''
 def score(tables):
     return (tables[0] == tables[1] == tables[2] or
             tables[3] == tables[4] == tables[5] or
